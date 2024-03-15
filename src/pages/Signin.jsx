@@ -36,7 +36,7 @@ export default function SignIn() {
       dispatch(signInSuccess(data));
       navigate('/');
     } catch (error) {
-      dispatch(signInSuccess(data))
+      dispatch(signInFailure(error.message));
     }
   };
   return (
@@ -58,4 +58,4 @@ export default function SignIn() {
      {error && <p className='text-red-500 mt-5'>{error}</p>}
     </div>
   );
-};
+}
